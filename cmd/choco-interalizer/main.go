@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strings"
 
 	"github.com/cloudshapers-nl/choco-internalizer/helpers"
 )
@@ -31,6 +32,8 @@ func main() {
 	}
 
 	for name, version := range input {
+		name := strings.ToLower(name)
+
 		exists := helpers.CheckIfExists(list, name, version)
 		if exists {
 			fmt.Printf("Package %s with version %s already exists in the repo\n", name, version)

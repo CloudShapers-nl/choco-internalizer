@@ -23,7 +23,7 @@ func GetPackageList() ([]map[string]string, error) {
 		slices := strings.Split(line, "|")
 
 		outputMap := map[string]string{
-			slices[0]: slices[1],
+			strings.ToLower(slices[0]): slices[1],
 		}
 
 		outputList = append(outputList, outputMap)
